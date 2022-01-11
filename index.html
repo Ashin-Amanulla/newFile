@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mainApp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src='Scripts/controller.js'></script>
+</head>
+<body>
+    <!--display the name and age of programmers in ABC Company-->
+    <div ng-controller="people">
+        <ul>
+            <h2>Name of programmers in ABC Company</h2>
+            <input type="text" ng-model="searchBox"/>
+            <li ng-repeat="person in persons|filter:searchBox">
+                {{person.Name+'  :  '+person.Age}}
+            </li>
+        </ul>
+
+    </div>
+</body>
+</html>
